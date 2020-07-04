@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+@mixin dis-flex-col {
+    display: flex;
+    flex-direction: column;
+}
+html, body { 
+    height: 100%; 
+    overflow:hidden;
+    @include dis-flex-col();
+}
+app-root{
+    flex:1;
+    overflow: auto;
+    @include dis-flex-col();
+}
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
