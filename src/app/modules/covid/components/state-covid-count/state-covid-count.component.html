@@ -1,0 +1,11 @@
+<div class="count-card-container">
+    <mat-progress-bar *ngIf="showLoading" class="loader" mode="indeterminate"></mat-progress-bar>
+    <div class="card-sub-section">
+        <div class="card-count-head active-case"> Active Cases </div>
+        <div class="card-count-num"> {{stateWiseData.active}} </div>
+    </div>
+    <div class="card-sub-section">
+        <div class="card-count-head confirmed-case"> Confirmed Cases </div>
+        <div class="card-count-num"> {{stateWiseData.confirmed}} </div>
+    </div>
+</div>

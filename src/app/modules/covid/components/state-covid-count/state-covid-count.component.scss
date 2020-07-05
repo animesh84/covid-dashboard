@@ -1,0 +1,42 @@
+.count-card-container{
+    padding: 16px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 5px;
+}
+.card-sub-section{
+    .card-count-head{
+        font-size: 20px;
+        font-weight: 500;
+        margin-bottom: 16px;
+        &.active-case{
+            color:rgba(207, 0, 15, 1)
+        }
+        &.confirmed-case{
+            color: rgba(243, 156, 18, 1)
+        }
+    }
+    .card-count-num{
+        font-size: 18px;
+        font-weight: 500;
+    }
+}
+
+.loader{
+    position: absolute;
+    top:0;
+}
+
+@media (max-width:400px){
+    .count-card-container{
+        justify-content: flex-start;
+    }
+    .card-sub-section{
+        margin:10px;
+    }
+}

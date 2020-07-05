@@ -1,0 +1,38 @@
+<div class="chart-container">
+    <mat-progress-bar *ngIf="showLoading" class="loader" mode="indeterminate"></mat-progress-bar>
+    <div class="chart-button-section">
+        <button mat-mini-fab color="primary" aria-label="Chart previous data"
+            [disabled]="showLoading || (dateWiseData.cursor <= 0)" (click)="fetchNextPreviousData('previous')"
+            class="btn-gt-xs" title="Previous data">
+            <mat-icon>keyboard_arrow_left</mat-icon>
+        </button>
+        <div class="chart-canvas-container">
+            <canvas #chartEl></canvas>
+        </div>
+        <button mat-mini-fab color="primary" aria-label="Chart next data"
+            [disabled]="showLoading || (dateWiseData.cursor + dateRange >= dateWiseData.totalListLength)"
+            (click)="fetchNextPreviousData('next')" class="btn-gt-xs" title="Next data">
+            <mat-icon>keyboard_arrow_right</mat-icon>
+        </button>
+    </div>
+    <div class="chart-page-section">
+        <button mat-mini-fab color="primary" aria-label="Chart previous data"
+            [disabled]="showLoading || (dateWiseData.cursor <= 0)" (click)="fetchNextPreviousData('previous')"
+            class="btn-xs" title="Previous data">
+            <mat-icon>keyboard_arrow_left</mat-icon>
+        </button>
+        <button mat-mini-fab color="primary" aria-label="Chart next data"
+            [disabled]="showLoading || (dateWiseData.cursor + dateRange >= dateWiseData.totalListLength)"
+            (click)="fetchNextPreviousData('next')" class="btn-xs" title="Next data">
+            <mat-icon>keyboard_arrow_right</mat-icon>
+        </button>
+        <mat-form-field class="mar-h-24">
+            <mat-select id="date_range-sel" name="dateRangeSelect" [(ngModel)]="dateRange" placeholder="Date range"
+                (selectionChange)="dateRangeUpdate()" [disabled]="showLoading">
+                <mat-option [value]="10">10 days</mat-option>
+                <mat-option [value]="20">20 days</mat-option>
+                <mat-option [value]="30">30 days</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+</div>

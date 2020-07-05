@@ -1,0 +1,54 @@
+.chart-container{
+    padding:16px;
+    position: relative;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 5px;
+}
+.chart-button-section{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    .chart-canvas-container{
+        flex:0.9;
+        margin: 16px;
+    }
+    .btn-gt-xs{
+        display: block;
+    }
+}
+.chart-page-section{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    .btn-xs{
+        display: none;
+        margin: 10px;
+    }
+}
+.loader{
+    position: absolute;
+    top:0;
+    left:0;
+}
+.mar-h-24{
+    margin: 0 24px;
+}
+
+@media (max-width:640px){
+    .chart-button-section{
+        .chart-canvas-container{
+            flex:1;
+        }
+        .btn-gt-xs{
+            display: none;
+        }
+    }
+    .chart-page-section{
+        .btn-xs{
+            display:block;
+        }
+    }
+}

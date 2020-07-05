@@ -1,0 +1,29 @@
+@mixin flex-dis-col {
+    display: flex;
+    flex-direction: column;
+}
+:host{
+    flex:1;
+    @include flex-dis-col();
+    overflow: auto;
+}
+
+.container{
+    flex:1;
+    @include flex-dis-col();
+    margin: 50px 150px;
+}
+
+.state-select-field{
+    font-size: 16px;
+}
+
+.mar-bot-16{
+    margin-bottom: 16px;
+}
+
+@media (max-width:1200px){
+    .container{
+        margin: 25px;
+    }
+}

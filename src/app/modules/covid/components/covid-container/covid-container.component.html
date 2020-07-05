@@ -1,0 +1,11 @@
+<div class="container">
+    <div class="mar-bot-16">
+        <mat-form-field class="state-select-field">
+            <mat-select id="state_select" name="stateSelect" [(ngModel)]="selectedStateCode" placeholder="Select state">
+                <mat-option *ngFor="let state of stateList" [value]="state.code">{{state.name}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <state-covid-count [stateCode]="selectedStateCode" class="mar-bot-16"></state-covid-count>
+    <covid-chart></covid-chart>
+</div>
